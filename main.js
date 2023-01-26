@@ -27,7 +27,7 @@ async function getAPI(ip){
         ispSpan.innerHTML=`${data.data.isp}`;
         timeZoneSpan.innerHTML= `UTC${data.data.location.timezone}`;
         console.log(data.data.location.lat, data.data.location.lng)
-        createMap(data.data.location.lat, data.data.location.lng);
+        getMap(data.data.location.lat, data.data.location.lng);
     }catch{
         console.error(error);
     }
@@ -35,13 +35,12 @@ async function getAPI(ip){
 
 
 const generateMapCurrentLocation = ()=>{
-    console.log('hi')
-    createMap(32.069172, 34.776041);
+    getMap(32.069172, 34.776041);
 }
 
 // ######## Map ##########//
 
-function createMap(lat, lng) {
+function getMap(lat, lng) {
     if (map) {
         map.remove();
     }
@@ -57,9 +56,4 @@ function createMap(lat, lng) {
     L.marker([lat, lng]).addTo(map);
   }
 
-function getIPFromAmazon() {
-    fetch("https://checkip.amazonaws.com/").then(res => res.text()).then(data => console.log(data))
-  }
-  
-getIPFromAmazon()
 

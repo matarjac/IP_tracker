@@ -83,12 +83,18 @@ button:hover {
   list-style: none;
   display: flex;
   justify-content: center;
-  gap: 10%;
+  gap: 3%;
   width: 1110px;
   height: 160px;
   background: #ffffff;
   border-radius: 15px;
   box-shadow: 1px 1px 5px;
+}
+
+hr {
+  all: unset;
+  border-right: 1px solid #2b2b2b;
+  margin: 20px 0 20px 0;
 }
 
 .details-list div {
@@ -180,5 +186,8 @@ h1 {
   }
   input::placeholder {
     font-size: 13px;
+  }
+  hr {
+    display: none;
   }
 }
